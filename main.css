@@ -2,9 +2,9 @@
 
 body {
     font-family: 'Karla', sans-serif;
-    background-image: url(https://cdn.discordapp.com/attachments/328847498372317185/865251387141783582/nice_texture.png);
+    background-image: url(https://cdn.discordapp.com/attachments/328847498372317185/952948899549679676/beanstalk.png);
     background-size: absolute;
-    color: white;
+    color: black;
     margin: 0px;
     height: 100%;
 }
@@ -48,9 +48,8 @@ h2 {
 }
 
 .pfp {
-    width: 96px;
-    height: 96px;
-    border-radius: 50%;
+    width: 103.2px;
+    height: 85.4px;
 }
 
 .link-box{
@@ -63,7 +62,7 @@ h2 {
     padding-left: 16px;
     padding-right: 16px;
     background-color: white;
-    color:#18254e;
+    color:#b54241;
     text-decoration: none;
     font-weight: bold;
     display: inline-block;
@@ -71,17 +70,18 @@ h2 {
     width: 90%;
     max-width: 680px;
     transition: 0.2s ease;
+    box-shadow: 10px 10px 8px rgba(0, 0, 0, 0.15);
   }
 
   
 .box-link:hover, .box-link:active {
-    background-color: black;
+    background-color: #b54241;
     color:white;
   }
 
 
 #daily-images {
-  box-shadow: 20px 10px 15px rgba(0, 0, 0, 0.623);
+  box-shadow: 20px 10px 20px rgba(0, 0, 0, 0.2);
 }
 
 * {
