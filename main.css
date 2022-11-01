@@ -48,8 +48,9 @@ h2 {
 }
 
 .pfp {
-    width: 103.2px;
-    height: 85.4px;
+    width: 7%;
+    height: 7%;
+    border-radius: 50%
 }
 
 .link-box{
@@ -62,7 +63,7 @@ h2 {
     padding-left: 16px;
     padding-right: 16px;
     background-color: white;
-    color:#b54241;
+    color: #020203;
     text-decoration: none;
     font-weight: bold;
     display: inline-block;
@@ -75,7 +76,7 @@ h2 {
 
   
 .box-link:hover, .box-link:active {
-    background-color: #b54241;
+    background-color: #020203;
     color:white;
   }
 
