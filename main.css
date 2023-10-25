@@ -53,8 +53,24 @@ h2 {
     border-radius: 50%
 }
 
+.img-box {
+  padding-left: 25px;
+  padding-right: 25px;
+  text-decoration: none;
+}
+
+.img-link {
+  max-width: 30px;
+  width: 100%;
+}
+
 .link-box{
     padding-bottom: 16px;
+}
+
+.img-link-box {
+  
+  padding-top: 50px;
 }
 
 .box-link:link, .box-link:visited {
@@ -70,7 +86,7 @@ h2 {
     height: auto;
     width: 90%;
     max-width: 680px;
-    transition: 0.2s ease;
+    transition: 0.24s ease;
     box-shadow: 10px 10px 8px rgba(0, 0, 0, 0.15);
   }
 
@@ -79,6 +95,7 @@ h2 {
     background-color: #020203;
     color:white;
   }
+
 
 
 #daily-images {
