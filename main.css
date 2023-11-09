@@ -60,8 +60,8 @@ h2 {
 }
 
 .imzh-link {
-  width: 40px;
-  max-width: 40px;
+  width: 35px;
+  max-width: 35px;
 }
 
 .link-box{
@@ -74,6 +74,7 @@ h2 {
 }
 
 .box-link:link, .box-link:visited {
+    border-radius: 150px;
     padding-top: 20px;
     padding-bottom: 20px;
     padding-left: 16px;
