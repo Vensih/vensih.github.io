@@ -97,7 +97,15 @@ h2 {
     color:white;
   }
 
+.link-table {
+    padding: 60px;
+}
 
+th, td {  
+    padding: 6px;
+    text-align: center;
+    border: 2px solid #ddd;
+}
 
 #daily-images {
   box-shadow: 20px 10px 20px rgba(0, 0, 0, 0.2);
@@ -124,3 +132,4 @@ h2 {
   clear: both;
   display: table;
 }
+
