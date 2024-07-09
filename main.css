@@ -54,23 +54,23 @@ h2 {
 }
 
 .imzh-box {
-  padding-left: 25px;
-  padding-right: 25px;
+  padding-left: 15px;
+  padding-right: 15px;
   text-decoration: none;
 }
 
 .imzh-link {
-  width: 40px;
-  max-width: 40px;
+  width: 30px;
+  max-width: 30px;
 }
 
 .link-box{
-    padding-bottom: 16px;
+    padding-bottom: 15px;
 }
 
 .imzh-link-box {
   
-  padding-top: 50px;
+  padding-top: 20px;
 }
 
 .box-link:link, .box-link:visited {
