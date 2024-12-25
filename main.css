@@ -74,5 +74,10 @@ h2:hover {
   #contact {
     margin-left: 78%;
   }
-
+ 
+  h1 {
+    font-size: 34px;
+    text-align: left;
+    margin-right: 10%;
+  }
 }
