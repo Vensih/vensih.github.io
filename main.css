@@ -72,12 +72,26 @@ h2:hover {
 @media screen and (max-width: 800px) {
   
   #contact {
-    margin-left: 70%;
+    visibility:hidden;
   }
  
   h1 {
     font-size: 34px;
     text-align: left;
     margin-right: 10%;
+  }
+}
+
+@media screen and (max-width: 450px) {
+
+  h1 {
+    font-size: 24px;
+    text-align: left;
+    margin-right: 10%;
+  }
+
+  h2 {
+    font-size: 20px;
+    margin-bottom: -14px;
   }
 }
