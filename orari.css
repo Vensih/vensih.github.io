@@ -23,23 +23,25 @@ h1 {
   margin-bottom: 48px;
 }
 
+/* Equal column widths */
 table {
-  width: 100%;
-  min-width: 900px;
-  border-collapse: collapse;
-  text-align: center;
-  background: rgba(0,0,0,0.2);
-  border-radius: 12px;
-  overflow: hidden;
-}
-
-th, td {
-  border: 1px solid #222;
-  padding: 14px 10px;
-  vertical-align: middle;
-  transition: transform 0.15s ease, background-color 0.15s ease;
-}
-
+    width: 100%;
+    table-layout: fixed; /* key property for equal cell widths */
+    border-collapse: collapse;
+    text-align: center;
+    min-width: 900px;
+    border-radius: 15px;
+    overflow: hidden;
+  }
+  
+  th, td {
+    width: 16.66%; /* divides 100% by 6 columns */
+    border: 1px solid #222;
+    padding: 14px 10px;
+    vertical-align: middle;
+    transition: transform 0.15s ease, background-color 0.15s ease;
+    word-wrap: break-word; /* prevent overflow */
+  }
 th {
   background-color: #141818;
   font-weight: 700;
