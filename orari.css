@@ -57,21 +57,12 @@ td {
 .course span { opacity: .85; font-size: 0.95em; }
 .course small { opacity: .7; display: block; margin-top: 4px; font-size: .85em; }
 
-/* Six smooth grayscale shades (black → grey) */
-.shade-1 { background-color: #0f0f0f; } /* almost black */
-.shade-2 { background-color: #1a1a1a; }
-.shade-3 { background-color: #242424; }
-.shade-4 { background-color: #2e2e2e; }
-.shade-5 { background-color: #393939; }
-.shade-6 { background-color: #454545; }
-
-/* Optional: hover adds brightness + subtle scale */
-td:hover {
-  transform: scale(1.04);
-  background-color: #575757 !important;
-  z-index: 1;
-  transition: transform 0.15s ease, background-color 0.2s ease;
-}
+.shade-1 { background-color: #2a3b8f; } /* muted royal blue */
+.shade-2 { background-color: #7b3fa0; } /* soft purple grape */
+.shade-3 { background-color: #3d8b6d; } /* seafoam teal */
+.shade-4 { background-color: #b85c38; } /* copper terracotta */
+.shade-5 { background-color: #c75d7a; } /* rose mauve */
+.shade-6 { background-color: #e0a72f; } /* soft amber gold */
 
 /* Mobile tweaks */
 @media (max-width: 820px) {
