@@ -42,6 +42,7 @@ table {
     transition: transform 0.15s ease, background-color 0.15s ease;
     word-wrap: break-word; /* prevent overflow */
   }
+  
 th {
   background-color: #141818;
   font-weight: 700;
