@@ -42,7 +42,7 @@ table {
     transition: transform 0.15s ease, background-color 0.15s ease;
     word-wrap: break-word; /* prevent overflow */
   }
-  
+
 th {
   background-color: #141818;
   font-weight: 700;
@@ -70,12 +70,27 @@ td {
 /* Mobile tweaks */
 @media (max-width: 820px) {
   body { margin: 20px; }
-  table { min-width: 760px; font-size: 13px; }
-  th, td { padding: 10px 8px; }
+  table { 
+    min-width: 760px; 
+    font-size: 13px;
+    table-layout: fixed; /* keep equal widths */
+  }
+  th, td { 
+    width: 16.66%; /* fix column width */
+    height: auto;  /* allow flexible height */
+    padding: 10px 8px; 
+  }
   h1 { font-size: 20px; }
 }
 
 /* Super small screens */
 @media (max-width: 420px) {
-  table { min-width: 680px; }
+  table { 
+    min-width: 680px;
+    table-layout: fixed;
+  }
+  th, td { 
+    width: 16.66%;
+    height: auto;
+  }
 }
