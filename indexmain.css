@@ -47,13 +47,33 @@ h2:hover {
 
 /* “contact” button in corner */
 #contact {
-  font-size: 16px;
+  font-size: 15px;
   font-weight: 500;
-  border-radius: 150px;
-  padding: 5px 10px;
-  border: 1.5px solid white;
+  letter-spacing: 0.2px;
+  border-radius: 50px;
+  padding: 4px 10px; /* tighter horizontal + vertical spacing */
+  border: 1.3px solid rgba(255, 255, 255, 0.7);
+  background: rgba(255, 255, 255, 0.04);
+  color: #ffffff;
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  transition: all 0.35s ease;
   display: inline-block;
+  cursor: pointer;
+  line-height: 1.2;
 }
+
+/* Hover: soft glow + color accent */
+#contact:hover {
+  border-color: #e03a3a; /* bright Luarasi red */
+  color: #e03a3a;
+  background: rgba(224, 58, 58, 0.08);
+  box-shadow:
+    0 0 6px rgba(224, 58, 58, 0.4),
+    0 0 14px rgba(224, 58, 58, 0.25);
+  transform: translateY(-1px) scale(1.03);
+}
+
 
 /* main header container */
 .header {
