@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="sq">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pema Familjare — Vensi Hajdari</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <!-- Full-screen pannable/zoomable viewport -->
+  <div id="viewport">
+    <div id="canvas">
+      <svg id="ribbon-svg" xmlns="http://www.w3.org/2000/svg"></svg>
+      <div id="nodes-layer"></div>
+    </div>
+  </div>
+
+  <!-- Legend — fixed to viewport, always visible -->
+  <div id="legend">
+    <div class="legend-row">
+      <span class="legend-icon" style="color:#c8a020;">♛</span>
+      <span>Mbret ose Mbretëreshë</span>
+    </div>
+    <div class="legend-row">
+      <span class="legend-icon" style="color:#111111;">✦</span>
+      <span>Djalë i Vetëm</span>
+    </div>
+  </div>
+
+  <!-- Reset-view button -->
+  <button id="btn-reset" title="Kthehu te Vensi">⌂</button>
+
+  <!-- Tooltip -->
+  <div id="tooltip">
+    <span class="tt-name"></span>
+    <span class="tt-dates"></span>
+    <span class="tt-title"></span>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
