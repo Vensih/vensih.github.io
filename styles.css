@@ -87,7 +87,7 @@ html, body {
   box-shadow: 0 0 0 4px #a07010, 0 0 0 6px #e8c840, 0 6px 22px rgba(180,140,20,0.45);
 }
 .node.central .portrait-ring img,
-.node.central .portrait-ring .placeholder-img { width: 128px; height: 128px; }
+.node.central .portrait-ring .placeholder-img { width: 128px; height: 128px; font-size: 32px; }
 
 /* Gen 1 */
 .node.gen1 .portrait-ring {
@@ -99,62 +99,62 @@ html, body {
   box-shadow: 0 0 0 2.5px #a07010, 0 4px 14px rgba(160,112,16,0.35);
 }
 .node.gen1 .portrait-ring img,
-.node.gen1 .portrait-ring .placeholder-img { width: 94px; height: 94px; }
+.node.gen1 .portrait-ring .placeholder-img { width: 94px; height: 94px; font-size: 24px; }
 
 /* Gen 2 */
 .node.gen2 .portrait-ring {
-  width: 86px; height: 86px; padding: 4px;
+  width: 96px; height: 96px; padding: 4px;
   background: conic-gradient(
     #c8a020 0deg,#e8c840 90deg,#c8a020 180deg,#e8c840 270deg,#c8a020 360deg
   );
   box-shadow: 0 0 0 2px #b09020, 0 3px 10px rgba(140,100,10,0.3);
 }
 .node.gen2 .portrait-ring img,
-.node.gen2 .portrait-ring .placeholder-img { width: 78px; height: 78px; }
+.node.gen2 .portrait-ring .placeholder-img { width: 88px; height: 88px; font-size: 22px; }
 
 /* Gen 3 */
 .node.gen3 .portrait-ring {
-  width: 70px; height: 70px; padding: 3px;
+  width: 82px; height: 82px; padding: 3px;
   background: conic-gradient(
     #c0981a 0deg,#ddb830 90deg,#c0981a 180deg,#ddb830 270deg,#c0981a 360deg
   );
   box-shadow: 0 0 0 1.5px #a08818, 0 2px 8px rgba(120,90,10,0.25);
 }
 .node.gen3 .portrait-ring img,
-.node.gen3 .portrait-ring .placeholder-img { width: 64px; height: 64px; }
+.node.gen3 .portrait-ring .placeholder-img { width: 76px; height: 76px; font-size: 19px; }
 
 /* Gen 4 */
 .node.gen4 .portrait-ring {
-  width: 58px; height: 58px; padding: 3px;
+  width: 70px; height: 70px; padding: 3px;
   background: conic-gradient(
     #b88812 0deg,#d4a828 90deg,#b88812 180deg,#d4a828 270deg,#b88812 360deg
   );
   box-shadow: 0 0 0 1px #988010, 0 2px 6px rgba(110,80,8,0.22);
 }
 .node.gen4 .portrait-ring img,
-.node.gen4 .portrait-ring .placeholder-img { width: 52px; height: 52px; }
+.node.gen4 .portrait-ring .placeholder-img { width: 64px; height: 64px; font-size: 16px; }
 
 /* Gen 5 */
 .node.gen5 .portrait-ring {
-  width: 50px; height: 50px; padding: 3px;
+  width: 60px; height: 60px; padding: 3px;
   background: conic-gradient(
     #a87808 0deg,#c49820 90deg,#a87808 180deg,#c49820 270deg,#a87808 360deg
   );
   box-shadow: 0 0 0 1px #887010, 0 1px 5px rgba(100,70,6,0.20);
 }
 .node.gen5 .portrait-ring img,
-.node.gen5 .portrait-ring .placeholder-img { width: 44px; height: 44px; }
+.node.gen5 .portrait-ring .placeholder-img { width: 54px; height: 54px; font-size: 14px; }
 
 /* Gen 6 */
 .node.gen6 .portrait-ring {
-  width: 44px; height: 44px; padding: 2px;
+  width: 54px; height: 54px; padding: 2px;
   background: conic-gradient(
     #987008 0deg,#b48818 90deg,#987008 180deg,#b48818 270deg,#987008 360deg
   );
   box-shadow: 0 0 0 1px #786808, 0 1px 4px rgba(90,60,5,0.18);
 }
 .node.gen6 .portrait-ring img,
-.node.gen6 .portrait-ring .placeholder-img { width: 40px; height: 40px; }
+.node.gen6 .portrait-ring .placeholder-img { width: 50px; height: 50px; font-size: 13px; }
 
 /* ── PLACEHOLDERS ───────────────────────────────────────────────── */
 .placeholder-img {
@@ -214,6 +214,21 @@ html, body {
   transform: translateX(-50%);
   font-size: 13px; line-height: 1;
   pointer-events: none; z-index: 3;
+}
+
+/* ── STAR BADGE (Only Son marker) ────────────────────────────────── */
+.node-star {
+  display: block;
+  text-align: center;
+  font-size: 11px;
+  line-height: 1;
+  color: #111111;
+  opacity: 0.65;
+  margin-top: 3px;
+}
+.node-star-lg {
+  font-size: 15px;
+  margin-top: 4px;
 }
 
 /* ── LEGEND (fixed) ──────────────────────────────────────────────── */

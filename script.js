@@ -98,11 +98,33 @@ const connections = [
 ];
 
 const ribbonStyles = {
-  amber: { fill:"rgba(205,148,30,0.40)", stroke:"rgba(205,148,30,0.22)", width:52 },
-  teal:  { fill:"rgba(85,152,128,0.32)", stroke:"rgba(85,152,128,0.18)", width:36 },
-  mist:  { fill:"rgba(120,155,135,0.20)", stroke:"rgba(120,155,135,0.11)", width:24 },
-  mist2: { fill:"rgba(110,145,125,0.14)", stroke:"rgba(110,145,125,0.08)", width:16 },
-  mist3: { fill:"rgba(100,135,115,0.10)", stroke:"rgba(100,135,115,0.06)", width:12 },
+  amber: { fill:"hsl(40,62%,78%)",  stroke:"hsl(40,55%,88%)",  width:52 },
+  teal:  { fill:"hsl(157,26%,83%)", stroke:"hsl(157,22%,89%)", width:36 },
+  mist:  { fill:"hsl(148,16%,87%)", stroke:"hsl(148,12%,92%)", width:24 },
+  mist2: { fill:"hsl(148,11%,90%)", stroke:"hsl(148,8%,94%)",  width:16 },
+  mist3: { fill:"hsl(148,7%,92%)",  stroke:"hsl(148,5%,96%)",  width:12 },
+};
+
+/* ── MARRIED COUPLES (filled wedge between the two parent ribbons) ────────── */
+const couples = [
+  { child: "vensi",   p1: "father",  p2: "mother",  color: "amber" },
+  { child: "father",  p1: "pat-gf",  p2: "pat-gm",  color: "teal"  },
+  { child: "mother",  p1: "mat-gf",  p2: "mat-gm",  color: "teal"  },
+  { child: "pat-gf",  p1: "pp-ggf",  p2: "pp-ggm",  color: "mist"  },
+  { child: "pat-gm",  p1: "pm-ggf",  p2: "pm-ggm",  color: "mist"  },
+  { child: "mat-gf",  p1: "mp-ggf",  p2: "mp-ggm",  color: "mist"  },
+  { child: "mat-gm",  p1: "mm-ggf",  p2: "mm-ggm",  color: "mist"  },
+  { child: "pp-ggf",  p1: "rustem",  p2: "sebije",  color: "mist2" },
+  { child: "pp-ggm",  p1: "hassan",  p2: "vace-k",  color: "mist2" },
+  { child: "sebije",  p1: "mani",    p2: "laje",    color: "mist3" },
+];
+
+const marriageFills = {
+  amber: "hsl(40,68%,91%)",
+  teal:  "hsl(157,24%,92%)",
+  mist:  "hsl(148,14%,93%)",
+  mist2: "hsl(148,9%,94%)",
+  mist3: "hsl(148,6%,96%)",
 };
 
 /* ── PAN / ZOOM STATE ────────────────────────────────────────────────────── */
@@ -140,6 +162,17 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const byId = {};
   people.forEach(p => { byId[p.id] = p; });
+
+  /* ── Marriage wedges (behind ribbons) ────── */
+  couples.forEach(couple => {
+    const c = byId[couple.child], p1 = byId[couple.p1], p2 = byId[couple.p2];
+    if (!c || !p1 || !p2) return;
+    const el = document.createElementNS("http://www.w3.org/2000/svg", "path");
+    el.setAttribute("d", buildMarriageWedge(c.x, c.y, p1.x, p1.y, p2.x, p2.y));
+    el.setAttribute("fill", marriageFills[couple.color]);
+    el.setAttribute("stroke", "none");
+    svg.appendChild(el);
+  });
 
   /* ── Ribbons ──────────────────────────────── */
   connections.forEach(conn => {
@@ -193,13 +226,13 @@ document.addEventListener("DOMContentLoaded", () => {
     label.className = "node-label";
     const nameEl = document.createElement("span");
     nameEl.className = "name"; nameEl.textContent = person.name;
+    label.appendChild(nameEl);
     if (person.icon === "star") {
       const ic = document.createElement("span");
-      ic.textContent = " ✦"; ic.style.fontSize = "0.75em";
-      ic.style.verticalAlign = "middle"; ic.style.opacity = "0.7";
-      nameEl.appendChild(ic);
+      ic.className = "node-star" + (person.gen <= 1 ? " node-star-lg" : "");
+      ic.textContent = "✦";
+      label.appendChild(ic);
     }
-    label.appendChild(nameEl);
     if (person.dates) {
       const dEl = document.createElement("span");
       dEl.className = "dates"; dEl.textContent = person.dates;
@@ -323,6 +356,13 @@ document.addEventListener("DOMContentLoaded", () => {
   /* ── RESET BUTTON ─────────────────────────── */
   document.getElementById("btn-reset").addEventListener("click", initView);
 });
+
+/* ── MARRIAGE WEDGE — sector from child to two parents (arc at parent radius) */
+function buildMarriageWedge(cx, cy, p1x, p1y, p2x, p2y) {
+  const R = Math.round(Math.sqrt((p1x - CX) ** 2 + (p1y - CY) ** 2));
+  // sweep=1 (clockwise in SVG) traces the arc away from Vensi (the outer arc)
+  return `M ${cx} ${cy} L ${p1x} ${p1y} A ${R} ${R} 0 0 1 ${p2x} ${p2y} Z`;
+}
 
 /* ── RIBBON GEOMETRY — uniform-width curved band ──────────────────────────── */
 function buildRibbon(x1, y1, x2, y2, w) {

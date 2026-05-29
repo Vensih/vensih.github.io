@@ -8,113 +8,6 @@
 </head>
 <body>
 
-  <!-- Password gate -->
-  <div id="password-gate">
-    <div id="password-box">
-      <h2>Pema Familjare</h2>
-      <p>Kjo faqe është e mbrojtur me fjalëkalim.</p>
-      <input type="password" id="password-input" placeholder="Fjalëkalimi..." autocomplete="current-password" />
-      <button id="password-submit">Hyr</button>
-      <p id="password-error" style="display:none;">Fjalëkalim i gabuar. Provo përsëri.</p>
-    </div>
-  </div>
-
-  <style>
-    #password-gate {
-      position: fixed;
-      inset: 0;
-      z-index: 9999;
-      background: #ffffff;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-family: Roboto, Arial, Helvetica, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-    }
-    #password-box {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 14px;
-      padding: 40px 48px;
-      background: rgba(240,240,235,0.97);
-      border: 1px solid #d0cfc0;
-      border-radius: 10px;
-      box-shadow: 0 2px 14px rgba(0,0,0,0.10);
-      min-width: 280px;
-    }
-    #password-box h2 {
-      margin: 0;
-      color: #c8a020;
-      font-size: 1.3rem;
-      font-weight: 700;
-      letter-spacing: 0.05em;
-    }
-    #password-box p {
-      margin: 0;
-      color: #555555;
-      font-size: 0.85rem;
-    }
-    #password-input {
-      width: 100%;
-      padding: 10px 14px;
-      background: #ffffff;
-      border: 1px solid #d0cfc0;
-      border-radius: 6px;
-      color: #111111;
-      font-size: 1rem;
-      font-family: inherit;
-      outline: none;
-      box-sizing: border-box;
-    }
-    #password-input:focus { border-color: #c8a020; }
-    #password-submit {
-      width: 100%;
-      padding: 10px;
-      background: #c8a020;
-      border: none;
-      border-radius: 6px;
-      color: #111111;
-      font-weight: 700;
-      font-size: 1rem;
-      font-family: inherit;
-      cursor: pointer;
-      transition: background 0.15s;
-    }
-    #password-submit:hover { background: #e8c840; }
-    #password-error { color: #cc3333 !important; font-size: 0.82rem !important; }
-  </style>
-
-  <script>
-    (function () {
-      var gate = document.getElementById('password-gate');
-      var input = document.getElementById('password-input');
-      var btn = document.getElementById('password-submit');
-      var err = document.getElementById('password-error');
-      var KEY = 'fam_unlocked';
-
-      if (sessionStorage.getItem(KEY) === '1') {
-        gate.style.display = 'none';
-        return;
-      }
-
-      function attempt() {
-        if (input.value === 'k9&L#vB2$p@8!zQ%W#7m') {
-          sessionStorage.setItem(KEY, '1');
-          gate.style.display = 'none';
-        } else {
-          err.style.display = 'block';
-          input.value = '';
-          input.focus();
-        }
-      }
-
-      btn.addEventListener('click', attempt);
-      input.addEventListener('keydown', function (e) {
-        if (e.key === 'Enter') attempt();
-      });
-    })();
-  </script>
-
   <!-- Full-screen pannable/zoomable viewport -->
   <div id="viewport">
     <div id="canvas">
@@ -143,6 +36,19 @@
     <span class="tt-name"></span>
     <span class="tt-dates"></span>
     <span class="tt-title"></span>
+  </div>
+
+  <!-- Side Panel -->
+  <div id="side-panel">
+    <button id="panel-close">✕</button>
+    <div id="panel-header">
+      <div id="panel-avatar"></div>
+      <h2 id="panel-name"></h2>
+      <p id="panel-dates"></p>
+      <p id="panel-title"></p>
+    </div>
+    <div class="panel-divider"></div>
+    <p id="panel-bio"></p>
   </div>
 
   <script src="script.js"></script>
